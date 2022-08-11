@@ -1,58 +1,33 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.IO.Compression;
-using System.Text;
 
 namespace WowsMq
 {
     internal class GzipUtils
     {
-        public static byte[] Decompress(string input)
+        public static byte[] Compress(byte[] bytes)
         {
-           // byte[] compressed = Convert.FromBase64String(input);
-            return Decompress(Encoding.UTF8.GetBytes(input));
-            //return Encoding.UTF8.GetString(decompressed);
-        }
-
-        public static byte[] Compress(string input)
-        {
-            byte[] encoded = Encoding.UTF8.GetBytes(input);
-            return Compress(encoded);
-        }
-
-        public static byte[] Decompress(byte[] input)
-        {
-            using (var source = new MemoryStream(input))
+            using (MemoryStream compressStream = new MemoryStream())
             {
-                byte[] lengthBytes = new byte[4];
-                source.Read(lengthBytes, 0, 4);
-
-                var length = BitConverter.ToInt32(lengthBytes, 0);
-                using (var decompressionStream = new GZipStream(source,
-                    CompressionMode.Decompress))
-                {
-                    var result = new byte[length];
-                    decompressionStream.Read(result, 0, length);
-                    return result;
-                }
+                using (var zipStream = new GZipStream(compressStream, CompressionMode.Compress))
+                    zipStream.Write(bytes, 0, bytes.Length);
+                return compressStream.ToArray();
             }
         }
 
-        public static byte[] Compress(byte[] input)
+
+        public static byte[] Decompress(byte[] bytes)
         {
-            using (var result = new MemoryStream())
+            using (var compressStream = new MemoryStream(bytes))
             {
-                var lengthBytes = BitConverter.GetBytes(input.Length);
-                result.Write(lengthBytes, 0, 4);
-
-                using (var compressionStream = new GZipStream(result,
-                    CompressionMode.Compress))
+                using (var zipStream = new GZipStream(compressStream, CompressionMode.Decompress))
                 {
-                    compressionStream.Write(input, 0, input.Length);
-                    compressionStream.Flush();
-
+                    using (var resultStream = new MemoryStream())
+                    {
+                        zipStream.CopyTo(resultStream);
+                        return resultStream.ToArray();
+                    }
                 }
-                return result.ToArray();
             }
         }
     }

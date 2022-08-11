@@ -12,3 +12,17 @@ C:\Users\shinoaki\Documents\code_project\VisualStudio\WowsMq\obj\Debug\WowsMq.cs
 C:\Users\shinoaki\Documents\code_project\VisualStudio\WowsMq\obj\Debug\WowsMq.csproj.CopyComplete
 C:\Users\shinoaki\Documents\code_project\VisualStudio\WowsMq\obj\Debug\WowsMq.exe
 C:\Users\shinoaki\Documents\code_project\VisualStudio\WowsMq\obj\Debug\WowsMq.pdb
+D:\Code\GitHub\WowsMq\bin\Debug\WowsMq.exe.config
+D:\Code\GitHub\WowsMq\bin\Debug\WowsMq.exe
+D:\Code\GitHub\WowsMq\bin\Debug\WowsMq.pdb
+D:\Code\GitHub\WowsMq\bin\Debug\M2Mqtt.Net.dll
+D:\Code\GitHub\WowsMq\bin\Debug\M2Mqtt.Net.pdb
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.csproj.AssemblyReference.cache
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.csproj.SuggestedBindingRedirects.cache
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.MqttFrom.resources
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.Properties.Resources.resources
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.csproj.GenerateResource.cache
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.csproj.CoreCompileInputs.cache
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.csproj.CopyComplete
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.exe
+D:\Code\GitHub\WowsMq\obj\Debug\WowsMq.pdb

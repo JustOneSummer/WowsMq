@@ -103,7 +103,7 @@ namespace WowsMq
             byte[] dataBytes;
             if (this.buttonGzip.Text.Equals("禁用Gzip"))
             {
-                dataBytes = GzipUtils.Compress(data);
+                dataBytes = GzipUtils.Compress(Encoding.UTF8.GetBytes(data));
             }
             else
             {
